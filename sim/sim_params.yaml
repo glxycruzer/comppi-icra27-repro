@@ -1,0 +1,93 @@
+# controller_server harness config: FollowPath block mirrors production
+# navigation_params.yaml; local costmap = static test map + inflation.
+controller_server:
+  ros__parameters:
+    use_sim_time: false
+    controller_frequency: 10.0
+    controller_patience: 10.0
+    min_x_velocity_threshold: 0.001
+    min_y_velocity_threshold: 0.5
+    min_theta_velocity_threshold: 0.001
+    failure_tolerance: 10.0
+    progress_checker_plugin: "progress_checker"
+    goal_checker_plugins: ["general_goal_checker"]
+    controller_plugins: ["FollowPath"]
+    progress_checker:
+      plugin: "nav2_controller::SimpleProgressChecker"
+      required_movement_radius: 0.5
+      movement_time_allowance: 10.0
+    general_goal_checker:
+      stateful: True
+      plugin: "nav2_controller::SimpleGoalChecker"
+      xy_goal_tolerance: 0.25
+      yaw_goal_tolerance: 3.14
+
+    FollowPath:
+      plugin: "nav2_rotation_shim_controller::RotationShimController"
+      primary_controller: "comppi_controller::CoMPPIController"
+      angular_dist_threshold: 0.785
+      angular_disengage_threshold: 0.2
+      forward_sampling_distance: 0.3
+      rotate_to_heading_angular_vel: 1.0
+      max_angular_accel: 5.0
+      simulate_ahead_time: 1.0
+
+      batch_size: 1024
+      time_steps: 32
+      model_dt: 0.1
+      iteration_count: 1
+      lambda: 0.35
+      noise_std_v: 0.2
+      noise_std_w: 0.4
+      retry_attempts: 2
+      noise_block_steps: 8    # noise held constant per 0.8 s block
+      threads: 4
+
+      vx_max: 0.4
+      vx_min: 0.0
+      wz_max: 1.0
+      ax_max: 0.25
+      ax_min: -1.0
+      az_max: 3.0
+
+      obstacle_weight: 10.0
+      obstacle_critical_cost: 130.0
+      path_align_weight: 12.0
+      path_follow_weight: 6.0
+      path_angle_weight: 2.0
+      goal_weight: 6.0
+      goal_angle_weight: 5.0
+      prefer_forward_weight: 8.0
+      twirling_weight: 0.6
+      lookahead_dist: 0.0     # <=0 auto: vx_max * horizon
+      goal_dist_threshold: 0.8
+      goal_angle_threshold: 0.5
+      unknown_is_lethal: false
+
+      prune_distance: 2.5
+      max_robot_pose_search_dist: 3.0
+      transform_tolerance: 0.3
+      visualize: true
+
+local_costmap:
+  local_costmap:
+    ros__parameters:
+      use_sim_time: false
+      update_frequency: 5.0
+      publish_frequency: 2.0
+      global_frame: map
+      robot_base_frame: base_link
+      rolling_window: false
+      width: 10
+      height: 10
+      robot_radius: 0.19
+      resolution: 0.05
+      plugins: ["static_layer", "inflation_layer"]
+      static_layer:
+        plugin: "nav2_costmap_2d::StaticLayer"
+        map_subscribe_transient_local: true
+      inflation_layer:
+        plugin: "nav2_costmap_2d::InflationLayer"
+        inflation_radius: 0.45
+        cost_scaling_factor: 10.0
+      always_send_full_costmap: true

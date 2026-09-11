@@ -1,0 +1,4 @@
+comppi_iid_cnorm   n=45 succ=18 ttg= 27.0 | ESS med=  10.4 
+comppi_iid_ess05   n=45 succ= 0 ttg=  nan | ESS med=  51.2 
+comppi_iid_ess10   n=45 succ= 0 ttg=  nan | ESS med= 102.4 
+comppi_iid_ess20   n=45 succ= 0 ttg=  nan | ESS med= 204.8 

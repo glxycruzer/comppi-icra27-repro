@@ -1,0 +1,5 @@
+comppi             n=15 succ=15 ttg= 21.3 | ESS detour med=   4.9 nominal med=  23.5 | detour toggles/run med= 2.0 max=  2 | detour frac=0.26
+comppi_noanneal    n=15 succ= 2 ttg= 34.0 | ESS detour med= 396.8 nominal med=  20.9 | detour toggles/run med= 1.0 max=  2 | detour frac=0.63
+comppi_rho010      n=15 succ=15 ttg= 21.2 | ESS detour med=   1.8 nominal med=  23.5 | detour toggles/run med= 2.0 max=  2 | detour frac=0.25
+comppi_rho050      n=15 succ=11 ttg= 21.3 | ESS detour med=  62.8 nominal med=  22.6 | detour toggles/run med= 2.0 max=  2 | detour frac=0.37
+comppi             n=15 succ= 8 ttg= 26.3 | ESS detour med=   2.6 nominal med=  21.9 | detour toggles/run med= 2.0 max=  2 | detour frac=0.07

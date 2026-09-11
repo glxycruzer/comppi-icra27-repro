@@ -1,0 +1,16 @@
+world,seed,controller,success,collision,ttg,goal_err,path_len,min_clear,min_dyn_clear,min_dyn_clear_any,rms_dv,vmax,note
+crossing,0,mppi_tuned,False,True,10.18,3.657,3.95,1.1,-0.107,-0.107,0.0317,0.428,RESULT: FAILURE (status=6) dyn_collision
+crossing,1,mppi_tuned,False,False,11.26,3.231,4.38,1.1,-0.021,-0.066,0.0323,0.419,RESULT: FAILURE (status=6)
+crossing,2,mppi_tuned,False,False,9.26,4.064,3.55,1.1,0.011,0.011,0.0341,0.413,RESULT: FAILURE (status=6)
+crossing,3,mppi_tuned,False,True,9.78,3.797,3.81,1.1,-0.068,-0.106,0.0338,0.43,RESULT: FAILURE (status=6) dyn_collision
+crossing,4,mppi_tuned,False,False,10.46,3.585,4.03,1.1,0.044,0.044,0.0303,0.401,RESULT: FAILURE (status=6)
+crossing,5,mppi_tuned,False,False,6.58,5.179,2.46,1.1,0.004,-0.013,0.0358,0.408,RESULT: FAILURE (status=6)
+crossing,6,mppi_tuned,False,False,9.56,4.228,3.51,1.1,-0.01,-0.01,0.0356,0.411,RESULT: FAILURE (status=6)
+crossing,7,mppi_tuned,False,True,10.56,3.54,4.07,1.1,-0.026,-0.066,0.0345,0.407,RESULT: FAILURE (status=6) dyn_collision
+crossing,8,mppi_tuned,False,True,7.68,4.66,2.95,1.1,-0.073,-0.073,0.0345,0.408,RESULT: FAILURE (status=6) dyn_collision
+crossing,9,mppi_tuned,False,False,8.16,4.512,3.11,1.1,0.029,0.013,0.0339,0.406,RESULT: FAILURE (status=6)
+crossing,10,mppi_tuned,False,False,7.86,4.577,3.03,1.1,0.006,0.006,0.0327,0.402,RESULT: FAILURE (status=6)
+crossing,11,mppi_tuned,False,True,9.06,4.112,3.5,1.1,-0.083,-0.135,0.0347,0.413,RESULT: FAILURE (status=6) dyn_collision
+crossing,12,mppi_tuned,False,False,8.76,4.362,3.31,1.1,-0.021,-0.05,0.0331,0.427,RESULT: FAILURE (status=6)
+crossing,13,mppi_tuned,False,True,7.36,4.827,2.79,1.1,-0.026,-0.068,0.0377,0.428,RESULT: FAILURE (status=6) dyn_collision
+crossing,14,mppi_tuned,False,False,10.76,3.586,4.12,1.1,-0.004,-0.025,0.0308,0.408,RESULT: FAILURE (status=6)

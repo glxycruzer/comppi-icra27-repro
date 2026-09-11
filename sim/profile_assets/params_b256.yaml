@@ -1,0 +1,90 @@
+controller_server:
+  ros__parameters:
+    FollowPath:
+      angular_disengage_threshold: 0.2
+      angular_dist_threshold: 0.785
+      ax_max: 0.25
+      ax_min: -1.0
+      az_max: 3.0
+      batch_size: 256
+      forward_sampling_distance: 0.3
+      goal_angle_threshold: 0.5
+      goal_angle_weight: 5.0
+      goal_dist_threshold: 0.8
+      goal_weight: 6.0
+      iteration_count: 1
+      lambda: 0.35
+      lookahead_dist: 0.0
+      max_angular_accel: 5.0
+      max_robot_pose_search_dist: 3.0
+      model_dt: 0.1
+      noise_block_steps: 8
+      noise_std_v: 0.2
+      noise_std_w: 0.4
+      obstacle_critical_cost: 130.0
+      obstacle_weight: 10.0
+      path_align_weight: 12.0
+      path_angle_weight: 2.0
+      path_follow_weight: 6.0
+      plugin: nav2_rotation_shim_controller::RotationShimController
+      prefer_forward_weight: 8.0
+      primary_controller: comppi_controller::CoMPPIController
+      profile_log: /tmp/comppi_profile_256.txt
+      prune_distance: 2.5
+      retry_attempts: 2
+      rotate_to_heading_angular_vel: 1.0
+      simulate_ahead_time: 1.0
+      threads: 4
+      time_steps: 32
+      transform_tolerance: 0.3
+      twirling_weight: 0.6
+      unknown_is_lethal: false
+      visualize: false
+      vx_max: 0.4
+      vx_min: 0.0
+      wz_max: 1.0
+    controller_frequency: 10.0
+    controller_patience: 10.0
+    controller_plugins:
+    - FollowPath
+    failure_tolerance: 10.0
+    general_goal_checker:
+      plugin: nav2_controller::SimpleGoalChecker
+      stateful: true
+      xy_goal_tolerance: 0.25
+      yaw_goal_tolerance: 3.14
+    goal_checker_plugins:
+    - general_goal_checker
+    min_theta_velocity_threshold: 0.001
+    min_x_velocity_threshold: 0.001
+    min_y_velocity_threshold: 0.5
+    progress_checker:
+      movement_time_allowance: 10.0
+      plugin: nav2_controller::SimpleProgressChecker
+      required_movement_radius: 0.5
+    progress_checker_plugin: progress_checker
+    use_sim_time: false
+local_costmap:
+  local_costmap:
+    ros__parameters:
+      always_send_full_costmap: true
+      global_frame: map
+      height: 10
+      inflation_layer:
+        cost_scaling_factor: 10.0
+        inflation_radius: 0.45
+        plugin: nav2_costmap_2d::InflationLayer
+      plugins:
+      - static_layer
+      - inflation_layer
+      publish_frequency: 2.0
+      resolution: 0.05
+      robot_base_frame: base_link
+      robot_radius: 0.19
+      rolling_window: false
+      static_layer:
+        map_subscribe_transient_local: true
+        plugin: nav2_costmap_2d::StaticLayer
+      update_frequency: 5.0
+      use_sim_time: false
+      width: 10

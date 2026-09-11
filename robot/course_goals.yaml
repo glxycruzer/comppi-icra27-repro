@@ -1,0 +1,28 @@
+# Fixed goal per course, in the MAP frame. For a fixed-course campaign the goal
+# is the same marked floor spot every trial, so we define it once here and score
+# every trial's final robot pose against it -- this sidesteps the robot's custom
+# UI sending goals via the /navigate_to_pose action (not recordable as a topic).
+#
+# tol_m: success radius. Keep it a bit larger than the nav goal tolerance (0.25)
+# to absorb hand-placement spread, but small enough that a stalled/short trial
+# (esp. on 'surprise') is correctly a failure.
+#
+# Fill goal_x/goal_y for each course from ONE clean reference run's final pose
+# (I read it off the first successful trial), or from the coordinate you send
+# the robot to. corridor is set from the recorded runs; fill the others when
+# their first clean run is in.
+
+corridor:
+  goal_x: -3.95
+  goal_y: -7.17
+  tol_m: 0.60
+
+passage:
+  goal_x: null      # TODO: set from first clean passage run
+  goal_y: null
+  tol_m: 0.60
+
+surprise:
+  goal_x: null      # TODO: set from first clean surprise run (robot past the box)
+  goal_y: null
+  tol_m: 0.60

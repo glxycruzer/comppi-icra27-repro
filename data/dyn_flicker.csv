@@ -1,0 +1,16 @@
+world,seed,controller,success,collision,ttg,goal_err,path_len,min_clear,min_dyn_clear,min_dyn_clear_any,rms_dv,vmax,note
+crossing,0,comppi,False,True,25.16,0.242,7.36,1.1,-0.064,-0.125,0.0232,0.396,RESULT: SUCCESS (status=4) dyn_collision
+crossing,1,comppi,True,False,27.66,0.245,8.53,1.1,-0.018,-0.018,0.0178,0.4,RESULT: SUCCESS (status=4)
+crossing,2,comppi,True,False,29.36,0.243,8.77,1.1,-0.009,-0.009,0.0169,0.4,RESULT: SUCCESS (status=4)
+crossing,3,comppi,False,True,24.76,0.241,7.36,1.1,-0.075,-0.188,0.0238,0.394,RESULT: SUCCESS (status=4) dyn_collision
+crossing,4,comppi,False,True,28.96,0.25,8.71,1.1,-0.026,-0.026,0.0168,0.4,RESULT: SUCCESS (status=4) dyn_collision
+crossing,5,comppi,True,False,25.46,0.248,7.44,1.1,0.008,0.008,0.015,0.4,RESULT: SUCCESS (status=4)
+crossing,6,comppi,True,False,25.26,0.246,7.98,1.1,0.03,0.03,0.0182,0.4,RESULT: SUCCESS (status=4)
+crossing,7,comppi,True,False,26.46,0.245,8.12,1.1,-0.019,-0.019,0.0179,0.397,RESULT: SUCCESS (status=4)
+crossing,8,comppi,False,True,25.56,0.247,7.36,1.1,-0.071,-0.177,0.0235,0.4,RESULT: SUCCESS (status=4) dyn_collision
+crossing,9,comppi,True,False,26.16,0.245,8.0,1.1,0.065,0.065,0.0172,0.4,RESULT: SUCCESS (status=4)
+crossing,10,comppi,True,False,24.16,0.24,7.36,1.1,-0.007,-0.07,0.0209,0.396,RESULT: SUCCESS (status=4)
+crossing,11,comppi,False,True,24.36,0.248,7.35,1.1,-0.057,-0.125,0.0243,0.396,RESULT: SUCCESS (status=4) dyn_collision
+crossing,12,comppi,True,False,27.26,0.248,8.33,1.1,0.046,0.046,0.018,0.4,RESULT: SUCCESS (status=4)
+crossing,13,comppi,False,True,32.76,0.24,9.88,1.1,-0.028,-0.028,0.0176,0.4,RESULT: SUCCESS (status=4) dyn_collision
+crossing,14,comppi,False,False,15.98,3.866,5.31,1.1,-0.007,-0.007,0.0222,0.4,RESULT: FAILURE (status=6)

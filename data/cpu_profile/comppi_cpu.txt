@@ -1,0 +1,3 @@
+cycles=212  cpu_all=1870 ms  cpu_busiest_thread=810 ms
+per cycle: busiest thread 3.82 ms, all threads 8.82 ms  (threads: 15)
+steady-state busiest-thread ms/cycle: median 6.00, p90 7.00, max 7.27

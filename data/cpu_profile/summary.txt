@@ -1,0 +1,23 @@
+load before: 1.30 2.36 5.45   nav container running: 0
+governor: performance   cur MHz (cpu0/4/6): 1800 2304 2304   max 2304
+=== mppi (<workspace>/src/comppi_controller/test/simval/params_mppi.yaml) ===
+controller_server pid 577520, threads 15
+RESULT: SUCCESS (status=4)
+cur MHz during run (cpu4/cpu6): 2304 2304
+cycles=195  cpu_all=2070 ms  cpu_busiest_thread=900 ms
+per cycle: busiest thread 4.62 ms, all threads 10.62 ms  (threads: 15)
+steady-state busiest-thread ms/cycle: median 15.00, p90 17.00, max 22.00
+loop overruns: 0
+<workspace>/src/comppi_controller/test/simval/profile_assets/run_profile_cpu.sh: line 20: 577515 Killed                  python3 $SV/kin_sim.py --ros-args -p x0:=1.2 -p y0:=5.0 -p yaw0:=0.0 -p log_path:=$OUT/${L}_traj.csv > $OUT/${L}_sim.log 2>&1
+=== comppi (<workspace>/src/comppi_controller/test/simval/profile_assets/params_b1024.yaml) ===
+controller_server pid 578815, threads 15
+RESULT: SUCCESS (status=4)
+cur MHz during run (cpu4/cpu6): 2304 2304
+cycles=212  cpu_all=1870 ms  cpu_busiest_thread=810 ms
+per cycle: busiest thread 3.82 ms, all threads 8.82 ms  (threads: 15)
+steady-state busiest-thread ms/cycle: median 6.00, p90 7.00, max 7.27
+loop overruns: 0
+<workspace>/src/comppi_controller/test/simval/profile_assets/run_profile_cpu.sh: line 20: 578789 Killed                  python3 $SV/kin_sim.py --ros-args -p x0:=1.2 -p y0:=5.0 -p yaw0:=0.0 -p log_path:=$OUT/${L}_traj.csv > $OUT/${L}_sim.log 2>&1
+=== CoMPPI internal wall-clock timer (us per cycle) ===
+n=211 median 5.65 ms  p90 7.24 ms  max 8.93 ms
+results in /tmp/cpu_profile  (please send /tmp/cpu_profile/*_cpu.txt and *_cpu.csv back)
