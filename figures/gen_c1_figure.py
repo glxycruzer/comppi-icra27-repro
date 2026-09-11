@@ -17,6 +17,7 @@ import matplotlib.pyplot as plt
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 plt.rcParams.update({
+    "pdf.fonttype": 42, "ps.fonttype": 42,  # TrueType, not Type 3 (PaperPlaza requirement)
     "font.family": "serif", "font.serif": ["Times New Roman", "DejaVu Serif"],
     "font.size": 8, "axes.titlesize": 8, "axes.labelsize": 8,
     "legend.fontsize": 7, "xtick.labelsize": 7, "ytick.labelsize": 7,

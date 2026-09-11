@@ -21,6 +21,7 @@ DATA = os.path.join(HERE, "data")
 
 # --- paper style: serif to match IEEEtran, compact type -------------------
 plt.rcParams.update({
+    "pdf.fonttype": 42, "ps.fonttype": 42,  # TrueType, not Type 3 (PaperPlaza requirement)
     "font.family": "serif",
     "font.serif": ["Times New Roman", "DejaVu Serif"],
     "font.size": 8,

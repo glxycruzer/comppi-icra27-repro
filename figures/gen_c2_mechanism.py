@@ -29,6 +29,7 @@ sys.path.insert(0, os.path.join(HERE, "..", "release", "comppi-icra27-repro", "s
 import worlds  # noqa: E402
 
 plt.rcParams.update({
+    "pdf.fonttype": 42, "ps.fonttype": 42,  # TrueType, not Type 3 (PaperPlaza requirement)
     "font.family": "serif", "font.serif": ["Times New Roman", "DejaVu Serif"],
     "font.size": 8, "axes.titlesize": 8, "axes.labelsize": 8,
     "legend.fontsize": 6.5, "xtick.labelsize": 7, "ytick.labelsize": 7,
