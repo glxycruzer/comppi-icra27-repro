@@ -24,7 +24,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.join(HERE, "..", "..", "comppi_controller", "test", "simval"))
+sys.path.insert(0, os.path.join(HERE, "..", "..", "namuhx_controller", "test", "simval"))
 sys.path.insert(0, os.path.join(HERE, "..", "release", "comppi-icra27-repro", "sim"))
 import worlds  # noqa: E402
 
@@ -69,7 +69,7 @@ sharp = load(os.path.join(HERE, "data", "rollouts_blocked_sym_s0_sharp.csv"))
 plain = load(os.path.join(HERE, "data", "rollouts_blocked_sym_s0_plain.csv"))
 grid = worlds.make_world("blocked_sym", 0)["grid_true"]
 
-fig, ax = plt.subplots(figsize=(3.4, 2.15))
+fig, ax = plt.subplots(figsize=(3.4, 2.05))
 ax.imshow(~grid, cmap="gray", origin="lower",
           extent=[0, worlds.N * worlds.RES, 0, worlds.N * worlds.RES],
           interpolation="nearest", vmin=0, vmax=1)

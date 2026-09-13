@@ -53,7 +53,7 @@ for r in rows:
     if ok and r.get("ttg"):
         ttg[r["controller"]][off].append(float(r["ttg"]))
 
-fig, ax1 = plt.subplots(1, 1, figsize=(3.4, 1.85))
+fig, ax1 = plt.subplots(1, 1, figsize=(3.4, 1.75))
 ax2 = fig.add_axes([0, 0, 0.001, 0.001]); ax2.set_visible(False)
 for ctrl in ("comppi", "comppi_nodetour", "comppi_noanneal"):
     if ctrl not in succ:

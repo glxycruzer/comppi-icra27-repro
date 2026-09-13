@@ -58,7 +58,7 @@ def trace(bag):
 
 
 have_photo = os.path.exists(PHOTO)
-fig = plt.figure(figsize=(3.4, 2.4))
+fig = plt.figure(figsize=(3.4, 2.3))
 if have_photo:
     gsa = fig.add_gridspec(1, 4, left=0.003, right=0.997, top=0.93, bottom=0.60, wspace=0.03)
     gs = fig.add_gridspec(1, 1, left=0.15, right=0.985, top=0.50, bottom=0.19)
