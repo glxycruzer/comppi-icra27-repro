@@ -24,7 +24,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.join(HERE, "..", "..", "namuhx_controller", "test", "simval"))
+import glob as _glob
+# the controller package's simval test dir (name-agnostic so released copies carry no internal names)
+for _d in _glob.glob(os.path.join(HERE, "..", "..", "*_controller", "test", "simval")):
+    sys.path.insert(0, _d)
 sys.path.insert(0, os.path.join(HERE, "..", "release", "comppi-icra27-repro", "sim"))
 import worlds  # noqa: E402
 
