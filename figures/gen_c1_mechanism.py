@@ -39,26 +39,25 @@ for m in ("iid", "block", "colored"):
             for r in csv.DictReader(open(os.path.join(DEC, f"decomp_{m}.csv")))]
     data[m] = rows
 
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(3.4, 1.36))
-plt.subplots_adjust(wspace=0.42)
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(3.4, 1.5))
+plt.subplots_adjust(wspace=0.42, bottom=0.36)
 
 # (a) sampled-speed distributions
 bins = [i * 0.02 for i in range(0, 14)]
 for m in ("iid", "block", "colored"):
     vx = [r["vx"] for r in data[m]]
     ax1.hist(vx, bins=bins, histtype="step", linewidth=1.1, color=C[m],
-             label=f"{LAB[m]} (max {max(vx):.3f})")
+             label=LAB[m])
 ax1.set_xlabel("Horizon-mean speed (m/s)", fontsize=7)
 ax1.set_ylabel("Samples (of 1024)", fontsize=7)
 ax1.set_title("(a) Speed exploration", fontsize=7.5)
-ax1.legend(frameon=False, fontsize=5.6, handlelength=1.2, borderaxespad=0.2, loc="upper right")
 ax1.spines[["top", "right"]].set_visible(False)
 ax1.yaxis.grid(True, color="#EEEEEE", linewidth=0.5)
 ax1.set_axisbelow(True)
 # reference: one block's worth of rate-limited increments, a_max*B*dt = 0.2 m/s
 blk = 0.25 * 8 * 0.1
 ax1.axvline(blk, color=C["block"], linestyle=":", linewidth=0.9)
-ax1.text(blk - 0.066, ax1.get_ylim()[1] * 0.30, "$a_{\\max}B\\Delta t$", fontsize=5.6,
+ax1.text(blk - 0.085, ax1.get_ylim()[1] * 0.30, "$a_{\\max}B\\Delta t$", fontsize=5.6,
          color=C["block"])
 
 # (b) total cost vs speed, binned means per mode
@@ -72,11 +71,14 @@ for m in ("iid", "block", "colored"):
 ax2.set_xlabel("Horizon-mean speed (m/s)", fontsize=7)
 ax2.set_ylabel("Total critic cost", fontsize=7)
 ax2.set_title("(b) Critic cost vs. speed", fontsize=7.5)
-ax2.legend(frameon=False, fontsize=5.6, handlelength=1.2, borderaxespad=0.2, loc="lower left")
 ax2.spines[["top", "right"]].set_visible(False)
 ax2.yaxis.grid(True, color="#EEEEEE", linewidth=0.5)
 ax2.set_axisbelow(True)
 
+# one shared legend below both panels: inside either axes it is wider than the panel
+h, l = ax1.get_legend_handles_labels()
+fig.legend(h, l, frameon=False, fontsize=5.8, loc="lower center",
+           bbox_to_anchor=(0.5, 0.02), ncol=3, columnspacing=1.1, handlelength=1.3)
 fig.savefig(os.path.join(HERE, "fig_c1_mechanism.pdf"))
 plt.close(fig)
 print("fig_c1_mechanism.pdf")

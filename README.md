@@ -1,14 +1,14 @@
-# CoMPPI (ICRA 2027) — reproducibility bundle
+# CoMPPI — reproducibility bundle
 
-Companion material for *Exploration Starvation and Mode Averaging in
-Acceleration-Limited Critic-Shaped MPPI: Lightweight Remedies Validated on an Embedded AMR*
-(CoMPPI, "Coherent MPPI").
+Companion code and data for a paper under double-blind review at ICRA 2027 on
+two failure modes of critic-shaped sampling MPC and their remedies
+(CoMPPI, "Coherent MPPI"). Author and affiliation details, and the full title,
+are omitted until the review is complete.
 
-Repository: https://github.com/glxycruzer/comppi-icra27-repro (this bundle, versioned; the
-`v1.0-submission` tag is the state cited in the submitted manuscript).
+The `v1.0-submission` tag is the state cited in the submitted manuscript.
 
-**What is and is not here.** The CoMPPI controller source is proprietary
-(SK intellix) and is **not** included. Everything else needed to reproduce the
+**What is and is not here.** The CoMPPI controller source is proprietary and
+is **not** included. Everything else needed to reproduce the
 baselines and the experimental protocol, and to audit every number in the
 paper, is: the simulation harness and world generator, every CoMPPI / DWB /
 Nav2-MPPI parameter file used in simulation and on the robot, the
@@ -219,5 +219,6 @@ campaign (command-gated motion window; command-derived time-to-goal).
 
 ## License and contact
 
-License: to be set by SK intellix before release (data and scripts only; the
-controller remains proprietary). Corresponding author: Jinseop Lee, SK intellix.
+License: to be set before release (data and scripts only; the controller
+remains proprietary). Contact details will be added when the review is
+complete.
